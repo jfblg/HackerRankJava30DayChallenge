@@ -28,7 +28,12 @@ public class Solution3 {
     static void solve(double meal_cost, int tip_percent, int tax_percent) {
         double tip = (meal_cost * tip_percent) / 100;
         double tax = (meal_cost * tax_percent) / 100;
-        System.out.printf("%.0f", meal_cost + tip + tax);
+
+        int totalCost = (int) Math.round(meal_cost + tip + tax);
+        System.out.println(totalCost);
+
+        // OR:
+        // System.out.printf("%.0f", meal_cost + tip + tax);
     }
 
     private static final Scanner scanner = new Scanner(System.in);
