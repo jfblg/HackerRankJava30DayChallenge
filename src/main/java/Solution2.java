@@ -1,35 +1,54 @@
 import java.util.Scanner;
 
+/**
+ * Objective
+ * In this challenge, you'll work with arithmetic operators. Check out the Tutorial tab for learning materials and
+ * an instructional video!
+ *
+ * Task
+ * Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and
+ * tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost.
+ *
+ * Note: Be sure to use precise values for your calculations, or you may end up with an incorrectly rounded result!
+ *
+ * Input Format
+ *
+ * There are 3 lines of numeric input:
+ * The first line has a double, (the cost of the meal before tax and tip).
+ * The second line has an integer, (the percentage of being added as tip).
+ * The third line has an integer, (the percentage of being added as tax).
+ *
+ * Output Format
+ *
+ * Print the total meal cost, where is the rounded integer result of the entire bill ( with added tax and tip).
+ */
+
 public class Solution2 {
+
+    static void solve(double meal_cost, int tip_percent, int tax_percent) {
+        double tip = (meal_cost * tip_percent) / 100;
+        double tax = (meal_cost * tax_percent) / 100;
+
+        int totalCost = (int) Math.round(meal_cost + tip + tax);
+        System.out.println(totalCost);
+
+        // OR:
+        // System.out.printf("%.0f", meal_cost + tip + tax);
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        int i = 4;
-        double d = 4.0;
-        String s = "HackerRank ";
+        double mealCost = scanner.nextDouble();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        Scanner scan = new Scanner(System.in);
-        /* Declare second integer, double, and String variables. */
-        int j;
-        double e;
-        String t;
+        int tipPercent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        /* Read and save an integer, double, and String to your variables.*/
-        // Note: If you have trouble reading the entire String, please go back and review the Tutorial closely.
-        j = scan.nextInt();
-        e = scan.nextDouble();
-        scan.nextLine();
-        t = scan.nextLine();
+        int taxPercent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        /* Print the sum of both integer variables on a new line. */
-        System.out.println(i + j);
-
-        /* Print the sum of the double variables on a new line. */
-        System.out.println(d + e);
-
-        /* Concatenate and print the String variables on a new line;
-        	the 's' variable above should be printed first. */
-        System.out.println(s + t);
-
-        scan.close();
-
+        solve(mealCost, tipPercent, taxPercent);
+        scanner.close();
     }
 }
