@@ -22,10 +22,5 @@ public class Solution8 {
             );
         }
         scan.close();
-
-
-//        scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-//
-
     }
 }
