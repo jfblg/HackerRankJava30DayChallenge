@@ -10,7 +10,7 @@ public class Solution8 {
         int n = scan.nextInt();
         for(int i=0; i < n; i++) {
             String name = scan.next();
-            String number = scan.next();x
+            String number = scan.next();
             phoneBook.put(name, number);
         }
 
